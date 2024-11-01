@@ -1,2 +1,2 @@
 # passionlinux-overlay
-overlay pour distributions Gentoo-likes.
+Mon overlay pour distributions Gentoo-likes.
