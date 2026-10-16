@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>sebastien@localhost</email>
+		<name>Sebastien</name>
+	</maintainer>
+	<longdescription lang="en">
+		3D Pinball Space Cadet Talking is a community fork of SpaceCadetPinball
+		(the reverse-engineered Windows "3D Pinball for Windows - Space Cadet"
+		game) by Creatiel. It adds voice announcements, animated artwork and
+		gameplay refinements. This package repackages the prebuilt Ubuntu 24.04
+		amd64 .deb shipped upstream; it is not built from source.
+	</longdescription>
+</pkgmetadata>
