@@ -101,6 +101,13 @@ pkg_postinst() {
 		elog "  gnome-extensions enable mochi-typing@miflow13"
 		elog "It requires GNOME Shell 50."
 	fi
+
+	if ! use gnome && ! has_version '>=app-accessibility/at-spi2-core-2.60'; then
+		ewarn "Typing reactions off GNOME use the AT-SPI keyboard monitor, which"
+		ewarn "needs app-accessibility/at-spi2-core >= 2.60. The installed version"
+		ewarn "is older, so only caret activity is monitored and typing reactions"
+		ewarn "may stay silent. 2.60 is ~amd64 in the Gentoo tree for now."
+	fi
 }
 
 pkg_postrm() {
