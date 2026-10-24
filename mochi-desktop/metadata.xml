@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<!-- TODO: put your real name and e-mail here before sharing the overlay. -->
+		<email>your.email@example.com</email>
+	</maintainer>
+	<longdescription lang="en">
+		Mochi is a small, local-first desktop companion (GTK4 + Cairo) for Linux.
+		It reacts to typing, idle/away time, media playback and window activity.
+		All processing is local: it never reads typed content, window titles,
+		document names or the clipboard, makes no network request and sends no
+		telemetry.
+	</longdescription>
+	<use>
+		<flag name="gnome">
+			Install the optional GNOME Shell helper extension that provides
+			typing/activity signals and Mochi's global shortcut on GNOME. The
+			extension targets GNOME Shell 50 and must be enabled per user.
+		</flag>
+		<flag name="self-update">
+			Keep the bundled GitHub self-updater (the automatic update check,
+			the "Check for updates" menu entry and the mochi-update command).
+			Disabled by default because a system-wide install is updated
+			through Portage.
+		</flag>
+	</use>
+	<upstream>
+		<remote-id type="github">miflow13/mochi-desktop</remote-id>
+	</upstream>
+</pkgmetadata>
