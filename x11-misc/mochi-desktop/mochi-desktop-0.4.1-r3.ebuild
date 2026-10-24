@@ -9,13 +9,13 @@ DISTUTILS_USE_PEP517=setuptools
 
 inherit desktop distutils-r1 gnome2-utils
 
-MY_COMMIT="8e7459713539cbd6520a39db325b74aa1afd8b3e"
+MY_COMMIT="bef78d137c546b8260ab4d9cb3cf6f43bd97eb22"
 
 DESCRIPTION="A tiny, local-first desktop companion for Linux"
 HOMEPAGE="https://github.com/miflow13/mochi-desktop"
-# ${PV} rather than ${P}: the local distfile name stays put across revisions,
-# so a revision bump reuses the cached tarball and its Manifest entry.
-SRC_URI="https://github.com/Passionlinux/mochi-desktop/archive/${MY_COMMIT}.tar.gz -> mochi-desktop-${PV}.tar.gz"
+# The distfile name carries the commit: this revision moves the pin, so a fixed
+# name would make Portage hash the previously cached tarball of another commit.
+SRC_URI="https://github.com/Passionlinux/mochi-desktop/archive/${MY_COMMIT}.tar.gz -> mochi-desktop-${PV}-${MY_COMMIT:0:8}.tar.gz"
 S="${WORKDIR}/mochi-desktop-${MY_COMMIT}"
 
 LICENSE="MIT"
