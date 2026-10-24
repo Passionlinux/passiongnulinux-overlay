@@ -13,9 +13,11 @@ DESCRIPTION="A tiny, local-first desktop companion for Linux"
 HOMEPAGE="https://github.com/miflow13/mochi-desktop"
 
 # Live ebuild: tracks the branch that carries the cross-desktop work.
-# To build straight from a working tree instead, override it, e.g.:
-#   EGIT_REPO_URI="file:///home/sebastien/Projets/IA/mochi"
-EGIT_REPO_URI="https://github.com/Passionlinux/mochi-desktop.git"
+# To build straight from a local checkout instead, set MOCHI_GIT_REPO, e.g.:
+#   MOCHI_GIT_REPO="file:///home/sebastien/Projets/IA/mochi" \
+#       ebuild mochi-desktop-9999.ebuild clean install
+# Setting EGIT_REPO_URI in the environment does not work: this assignment wins.
+EGIT_REPO_URI="${MOCHI_GIT_REPO:-https://github.com/Passionlinux/mochi-desktop.git}"
 EGIT_BRANCH="main"
 
 LICENSE="MIT"
@@ -44,6 +46,7 @@ RDEPEND="
 	media-libs/gstreamer:1.0
 	x11-base/xwayland
 	x11-libs/libX11
+	x11-libs/libXScrnSaver
 	gnome? ( gnome-base/gnome-shell:0 )
 "
 DEPEND="${RDEPEND}"
